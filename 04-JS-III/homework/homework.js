@@ -31,11 +31,19 @@ function incrementarPorUno(array) {
   // y devuelve el array
   // Tu código:
   
-  for ( let i = 0 ; i < array.length ; i++ ){
+  // for ( let i = 0 ; i < array.length ; i++ ){
     
-    array [i] = array [i] + 1 
+  //   array [i] = array [i] + 1 
 
-  }return array;
+  // }return array;
+
+  var newArray = []
+  for (let i = 0 ; i < array.length ; i++){
+    newArray [i] = array [i] +1
+  }
+  return newArray;
+
+
 }
 
 
@@ -47,9 +55,11 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // array[array.length]= elemento;
   // return array;
 
-  array.push (elemento);
-  return array
+  // array.push (elemento);
+  // return array
 
+  array[array.length] = elemento
+  return array
 }
 
 
@@ -72,6 +82,8 @@ function dePalabrasAFrase(palabras) {
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
 
+  // return palabras.join(' ')
+
   let a = palabras.join(' ');
   return a;
 }
@@ -82,7 +94,11 @@ function arrayContiene(array, elemento) {
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
 
-  return (array.includes(elemento));
+  // return (array.includes(elemento));
+
+  for (let i = 0 ; i < array.length ; i++){
+    if (array[i] === elemento )return true}
+    return false
 
 }
 
@@ -120,7 +136,10 @@ function numeroMasGrande(numeros) {
   // Devuelve el número más grande
   // Tu código:
 
-return  Math.max.apply(null, numeros)
+// return  Math.max.apply(null, numeros)
+
+
+
 
 }
 
@@ -129,16 +148,26 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-var multiplicacion = 1 ;
-  if  (arguments.length >=1){
-for (let i=0 ; i < arguments.length ; i++){
-multiplicacion= multiplicacion*arguments[i];
+// var multiplicacion = 1 ;
+//   if  (arguments.length >=1){
+// for (let i=0 ; i < arguments.length ; i++){
+// multiplicacion= multiplicacion*arguments[i];
+// }
+// return multiplicacion;
+// }else if (arguments.length === 0) {
+//     return 0;
+// }
+
+var a = 1;
+
+if  (arguments.length >=1){ 
+arguments.forEach( item => { a += a * item});
+
+return a;} else if(arguments.length === 0) 
+{return 0}
+
 }
-return multiplicacion;
-}else if (arguments.length === 0) {
-    return 0;
-}
-}
+
 
 
 function cuentoElementos(arreglo){
